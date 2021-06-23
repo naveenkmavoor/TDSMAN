@@ -91,6 +91,15 @@ class _TopBarState extends State<TopBar> {
   Widget _options() => Row(
         children: [
           for (var i = 0; i < buttonInfo.length; i++) _dropDownButton(i),
+          Spacer(),
+          Text(
+            'TDSMANTRA 21-22',
+            style: TextStyle(
+              fontSize: 17,
+              color: Colors.black,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
         ],
       );
 
@@ -98,7 +107,7 @@ class _TopBarState extends State<TopBar> {
     return PopupMenuButton<String>(
       offset: Offset.fromDirection(1.5708, 30),
       elevation: 0,
-      
+      tooltip: '',
       color: Colors.grey[200],
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5),
@@ -122,7 +131,6 @@ class _TopBarState extends State<TopBar> {
         return menu.map(
           (String choice) {
             return PopupMenuItem<String>(
-
               value: choice,
               height: 20,
               padding: EdgeInsets.all(5),

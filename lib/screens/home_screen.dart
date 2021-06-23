@@ -26,23 +26,7 @@ class HomeScreen extends StatelessWidget {
       body: Row(
         children: [
           _sideMenu(),
-          Form(
-            key: _formKey,
-            child: CustomField(
-              label: 'Field 1',
-              validator: (val) {
-                name = val;
-                print(name);
-              },
-              width: 500,
-            ),
-          ),
-          TextButton(
-            onPressed: () {
-              _formKey.currentState?.validate();
-            },
-            child: Text('validate'),
-          ),
+          
         ],
       ),
     );
