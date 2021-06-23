@@ -96,8 +96,9 @@ class _TopBarState extends State<TopBar> {
 
   Widget _dropDownButton(i) {
     return PopupMenuButton<String>(
-      offset: Offset.fromDirection(1.5708, 40),
+      offset: Offset.fromDirection(1.5708, 30),
       elevation: 0,
+      
       color: Colors.grey[200],
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5),
@@ -121,6 +122,7 @@ class _TopBarState extends State<TopBar> {
         return menu.map(
           (String choice) {
             return PopupMenuItem<String>(
+
               value: choice,
               height: 20,
               padding: EdgeInsets.all(5),
