@@ -8,15 +8,18 @@ class SideMenuButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(15.0),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 25.0,
+        vertical: 10,
+      ),
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
           primary: Colors.white,
           shadowColor: Colors.white54,
           padding: EdgeInsets.symmetric(
-            vertical: 20,
-            horizontal: 30,
+            vertical: 15,
+            horizontal: 20,
           ),
         ),
         child: Row(

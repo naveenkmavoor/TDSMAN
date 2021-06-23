@@ -7,7 +7,7 @@ import 'package:tdsman_windows_app/screens/home_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (!kIsWeb && (Platform.isMacOS || Platform.isLinux || Platform.isWindows)) {
-    await DesktopWindow.setMinWindowSize(const Size(1000, 1000));
+    await DesktopWindow.setMinWindowSize(const Size(1300, 900));
   }
   runApp(MyApp());
 }
