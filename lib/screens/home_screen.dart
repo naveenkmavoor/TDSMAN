@@ -26,7 +26,15 @@ class HomeScreen extends StatelessWidget {
       body: Row(
         children: [
           _sideMenu(),
-          
+          Container(
+            height: 500,
+            width: 500,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/bg.png'),
+              ),
+            ),
+          ),
         ],
       ),
     );
