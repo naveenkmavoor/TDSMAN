@@ -8,26 +8,10 @@ class TopBar extends StatefulWidget {
 }
 
 class _TopBarState extends State<TopBar> {
-  bool _hovering = false;
-  bool _isBackPressedOrTouchedOutSide = false,
-      _isDropDownOpened = false,
-      _isPanDown = false;
-  final List<String> _list = ["Abc", "DEF", "GHI", "JKL", "MNO", "PQR"];
-  String _selectedItem = 'Select Item';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(40.0),
-        child: AppBar(
-          backgroundColor: Colors.grey[300],
-          elevation: 0,
-          title: _options(),
-        ),
-      ),
-      body: Center(),
-    );
+    return _options();
   }
 
   final List buttonInfo = [

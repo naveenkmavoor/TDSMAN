@@ -7,7 +7,7 @@ import 'package:tdsman_windows_app/screens/home_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   if (!kIsWeb && (Platform.isMacOS || Platform.isLinux || Platform.isWindows)) {
-    await DesktopWindow.setMinWindowSize(const Size(800, 900));
+    await DesktopWindow.setMinWindowSize(const Size(1000, 1000));
   }
   runApp(MyApp());
 }
@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: HomeScreen(),
     );
   }

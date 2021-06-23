@@ -12,7 +12,7 @@ class SideMenuButton extends StatelessWidget {
       child: Card(
         elevation: 5.0,
         color: Colors.white,
-        margin: EdgeInsets.symmetric(vertical: 20.0, horizontal: 30.0),
+        margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
         child: ListTile(
           title: Text(
             title,
