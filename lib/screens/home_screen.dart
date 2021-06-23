@@ -9,8 +9,13 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: TopBar(),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(40),
+              child: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.grey[200],
+          title: TopBar(),
+        ),
       ),
       body: Row(
         children: [
@@ -27,10 +32,8 @@ class HomeScreen extends StatelessWidget {
                       Center(
                         child: Container(
                           margin: EdgeInsets.only(
-                              top: MediaQuery.of(context)
-                                      .size
-                                      .aspectRatio *
-                                  10),
+                              top:
+                                  MediaQuery.of(context).size.aspectRatio * 10),
                           width: MediaQuery.of(context).size.width * 0.12,
                           height: 20.0,
                           color: Colors.blue[900],
@@ -42,8 +45,7 @@ class HomeScreen extends StatelessWidget {
                           style: TextStyle(
                             color: Colors.white,
                             fontSize:
-                                MediaQuery.of(context).size.aspectRatio *
-                                    15,
+                                MediaQuery.of(context).size.aspectRatio * 15,
                           ),
                         ),
                       ),
