@@ -8,6 +8,7 @@ import 'companySubModels/citDetails.dart';
 import 'companySubModels/forGovtDeductors.dart';
 
 class Company {
+  final String id;
   final BasicInformation basicInformation;
   final CompanyDetails companyDetails;
   final ResponsiblePersonDetails responsiblePersonDetails;
@@ -15,6 +16,7 @@ class Company {
   final CITDetails ciTdetails;
 
   Company({
+    required this.id,
     required this.basicInformation,
     required this.companyDetails,
     required this.responsiblePersonDetails,
@@ -23,6 +25,7 @@ class Company {
   });
 
   Company copyWith({
+    required String id,
     BasicInformation? basicInformation,
     CompanyDetails? companyDetails,
     ResponsiblePersonDetails? responsiblePersonDetails,
@@ -30,6 +33,7 @@ class Company {
     CITDetails? ciTdetails,
   }) {
     return Company(
+      id: id,
       basicInformation: basicInformation ?? this.basicInformation,
       companyDetails: companyDetails ?? this.companyDetails,
       responsiblePersonDetails:
@@ -41,6 +45,7 @@ class Company {
 
   Map<String, dynamic> toMap() {
     return {
+      'id': id,
       'basicInformation': basicInformation.toMap(),
       'companyDetails': companyDetails.toMap(),
       'responsiblePersonDetails': responsiblePersonDetails.toMap(),
@@ -51,6 +56,7 @@ class Company {
 
   factory Company.fromMap(Map<String, dynamic> map) {
     return Company(
+      id: map['id'],
       basicInformation: BasicInformation.fromMap(map['basicInformation']),
       companyDetails: CompanyDetails.fromMap(map['companyDetails']),
       responsiblePersonDetails:
@@ -74,20 +80,11 @@ class Company {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is Company &&
-        other.basicInformation == basicInformation &&
-        other.companyDetails == companyDetails &&
-        other.responsiblePersonDetails == responsiblePersonDetails &&
-        other.forGovtDeductors == forGovtDeductors &&
-        other.ciTdetails == ciTdetails;
+    return other is Company && other.id == id;
   }
 
   @override
   int get hashCode {
-    return basicInformation.hashCode ^
-        companyDetails.hashCode ^
-        responsiblePersonDetails.hashCode ^
-        forGovtDeductors.hashCode ^
-        ciTdetails.hashCode;
+    return id.hashCode;
   }
 }
