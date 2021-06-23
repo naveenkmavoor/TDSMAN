@@ -14,17 +14,27 @@ class SideMenuButton extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           primary: Colors.white,
           shadowColor: Colors.white54,
-        ),
-        child: ListTile(
-          title: Text(
-            title,
-            style: TextStyle(
-              fontSize: 15.0,
-              color: Colors.black54,
-              fontWeight: FontWeight.bold,
-            ),
+          padding: EdgeInsets.symmetric(
+            vertical: 20,
+            horizontal: 30,
           ),
-          trailing: Icon(Icons.arrow_forward_ios),
+        ),
+        child: Row(
+          children: [
+            Text(
+              title,
+              style: TextStyle(
+                fontSize: 15.0,
+                color: Colors.black54,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Spacer(),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: Colors.black54,
+            )
+          ],
         ),
       ),
     );

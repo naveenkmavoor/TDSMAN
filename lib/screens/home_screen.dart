@@ -9,6 +9,8 @@ class HomeScreen extends StatelessWidget {
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
+  late String name;
+
   @override
   Widget build(BuildContext context) {
     print('Hello');
@@ -29,7 +31,8 @@ class HomeScreen extends StatelessWidget {
             child: CustomField(
               label: 'Field 1',
               validator: (val) {
-                print(val);
+                name = val;
+                print(name);
               },
               width: 500,
             ),
