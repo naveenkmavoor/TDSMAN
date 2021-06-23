@@ -1,46 +1,33 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:tdsman_windows_app/custom_widget/formattedText.dart';
 import 'package:tdsman_windows_app/custom_widget/side_menu_button.dart';
-import 'package:tdsman_windows_app/custom_widget/topBar.dart';
 
+// ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
-
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   late String name;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(40),
-        child: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.grey[200],
-          title: TopBar(),
-        ),
-      ),
-      body: Row(
-        children: [
-          _sideMenu(),
-          Expanded(
-            child: _centerStack(context),
+    return Row(
+      children: [
+        _sideMenu(),
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              _header,
+              _displayInfo(),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
-  Widget _centerStack(BuildContext context) => Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          _header,
-          _displayInfo(),
-        ],
-      );
-
-  Widget _header = Stack(
+  final Widget _header = Stack(
     alignment: Alignment.center,
     children: [
       Padding(
@@ -54,7 +41,7 @@ class HomeScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(40, 40, 40, 10),
+            padding: const EdgeInsets.fromLTRB(40, 30, 40, 10),
             child: Text(
               'TDS Returns Made Easy',
               style: TextStyle(
@@ -147,42 +134,11 @@ class HomeScreen extends StatelessWidget {
 
   Widget _userInfo() => Column(
         children: [
-          _formatText('Name', 'HUKAMI CHAND'),
-          _formatText('Serial No', 'A7VC7LRH'),
-          _formatText('Financial year', '2005-06 TO 2020-21'),
-          _formatText('Version date', '29 APRIL 2021'),
+          FormattedText(header: 'Name', value: 'HUKAMI CHAND'),
+          FormattedText(header: 'Serial No', value: 'A7VC7LRH'),
+          FormattedText(header: 'Financial year', value: '2005-06 TO 2020-21'),
+          FormattedText(header: 'Version date', value: '29 APRIL 2021'),
         ],
-      );
-
-  Widget _formatText(String header, String value) => Padding(
-        padding: const EdgeInsets.all(5.0),
-        child: Row(
-          children: [
-            Container(
-              width: 120,
-              child: Row(
-                children: [
-                  _styledText(header),
-                  Spacer(),
-                  _styledText(':'),
-                ],
-              ),
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            _styledText(value),
-          ],
-        ),
-      );
-
-  Widget _styledText(String text) => Text(
-        text,
-        style: TextStyle(
-          color: Colors.black.withOpacity(.8),
-          fontWeight: FontWeight.w600,
-          fontSize: 14,
-        ),
       );
 
   Widget _sideMenu() => Container(

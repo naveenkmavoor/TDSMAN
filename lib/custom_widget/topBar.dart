@@ -10,98 +10,85 @@ class TopBar extends StatefulWidget {
 class _TopBarState extends State<TopBar> {
   @override
   Widget build(BuildContext context) {
-    return _options();
+    return Row(
+      children: [
+        for (var i = 0; i < buttonInfo.length; i++) _dropDownButton(i),
+        Spacer(),
+        Text(
+          'TDSMANTRA 21-22',
+          style: TextStyle(
+            fontSize: 17,
+            color: Colors.black,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ],
+    );
   }
 
   final List buttonInfo = [
     [
-      'Option 1',
+      'Masters',
+      <String>[],
+    ],
+    [
+      'Regular Return',
       <String>[
-        'Option menu 1',
-        'Option menu 2',
-        'Option menu 3',
-        'Option menu 4',
+        'Form 24Q',
+        'Import From Excel',
+        'Import From TDS File(Consolidated Statement)',
       ],
     ],
     [
-      'Option 2',
+      'Correction return',
       <String>[
-        'Option menu 1',
-        'Option menu 2',
-        'Option menu 3',
-        'Option menu 4',
+        'Import Data For Correction',
+        'Make Corrections',
       ],
     ],
     [
-      'Option 3',
+      'Reports',
       <String>[
-        'Option menu 1',
-        'Option menu 2',
-        'Option menu 3',
-        'Option menu 4',
+        'Certificates',
       ],
     ],
     [
-      'Option 4',
+      'NDSL Information',
       <String>[
-        'Option menu 1',
-        'Option menu 2',
-        'Option menu 3',
-        'Option menu 4',
+        'View BIN Information Online',
       ],
     ],
     [
-      'Option 5',
+      'TRACES information',
       <String>[
-        'Option menu 1',
-        'Option menu 2',
-        'Option menu 3',
-        'Option menu 4',
+        'PAN Name Extractor',
+        'Request For TDS/Conso File Online',
+        'Request For Form 16A',
+        'Request For Defaults/Justification Report',
+        'Add Challan/ PAN Correction/ Challan Correction',
+        'Download Requested Files',
+        'View Default Summary',
+        'View Statement Status',
+        'View TDS/TCS Credit',
+        'Download PDF Converter Utility To Generate TDS Certificate',
+        'Download PDF Converter Utility To Generate TDS Certificate Part-B',
+        'Download Justification Report Generation Utility',
       ],
     ],
     [
-      'Option 6',
+      'Utilities',
       <String>[
-        'Option menu 1',
-        'Option menu 2',
-        'Option menu 3',
-        'Option menu 4',
+        'Rename PDF Files',
+        'File Return Online',
+        'Update File Validation Utility - [ 7.1 ]',
+        'Update Software',
       ],
     ],
     [
-      'Option 7',
-      <String>[
-        'Option menu 1',
-        'Option menu 2',
-        'Option menu 3',
-        'Option menu 4',
-      ],
-    ],
-    [
-      'Option 8',
-      <String>[
-        'Option menu 1',
-        'Option menu 2',
-        'Option menu 3',
-        'Option menu 4',
-      ],
+      'Exit',
+      <String>[],
     ],
   ];
-
-  Widget _options() => Row(
-        children: [
-          for (var i = 0; i < buttonInfo.length; i++) _dropDownButton(i),
-          Spacer(),
-          Text(
-            'TDSMANTRA 21-22',
-            style: TextStyle(
-              fontSize: 17,
-              color: Colors.black,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ],
-      );
 
   Widget _dropDownButton(i) {
     return PopupMenuButton<String>(
@@ -115,7 +102,7 @@ class _TopBarState extends State<TopBar> {
       onSelected: (choice) {},
       child: Container(
         padding: EdgeInsets.symmetric(
-          horizontal: 5,
+          horizontal: 10,
           vertical: 5,
         ),
         child: Text(
@@ -134,11 +121,13 @@ class _TopBarState extends State<TopBar> {
               value: choice,
               height: 20,
               padding: EdgeInsets.all(5),
-              child: Text(
-                choice,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 13,
+              child: Container(
+                child: Text(
+                  choice,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 13,
+                  ),
                 ),
               ),
             );
