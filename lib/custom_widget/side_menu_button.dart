@@ -7,12 +7,14 @@ class SideMenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: onPressed,
-      child: Card(
-        elevation: 5.0,
-        color: Colors.white,
-        margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 30.0),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          primary: Colors.white,
+          shadowColor: Colors.white54,
+        ),
         child: ListTile(
           title: Text(
             title,

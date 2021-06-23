@@ -70,10 +70,6 @@ class HomeScreen extends StatelessWidget {
                     onPressed: () {},
                     title: 'Add Employee',
                   ),
-                  SideMenuButton(
-                    onPressed: () {},
-                    title: 'Add Company',
-                  ),
                 ],
               ),
             ),

@@ -8,7 +8,6 @@ class TopBar extends StatefulWidget {
 }
 
 class _TopBarState extends State<TopBar> {
-
   @override
   Widget build(BuildContext context) {
     return _options();
@@ -97,16 +96,13 @@ class _TopBarState extends State<TopBar> {
 
   Widget _dropDownButton(i) {
     return PopupMenuButton<String>(
-      offset: Offset.fromDirection(90, 40),
+      offset: Offset.fromDirection(1.5708, 40),
       elevation: 0,
-      color: Colors.grey[200],      
+      color: Colors.grey[200],
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5),
       ),
-      tooltip: null,
-      onSelected: (choice) {
-        
-      },
+      onSelected: (choice) {},
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: 5,
