@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:tdsman_windows_app/custom_widget/side_menu_button.dart';
 import 'package:tdsman_windows_app/custom_widget/textField.dart';
 import 'package:tdsman_windows_app/custom_widget/topBar.dart';
-import 'package:tdsman_windows_app/screens/add_company.dart';
 
 class HomeScreen extends StatelessWidget {
-  final id = 'HomeScreen ';
+  HomeScreen({Key? key}) : super(key: key);
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -26,13 +25,14 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Row(
         children: [
-          _sideMenu(context),
+          _sideMenu(),
+          
         ],
       ),
     );
   }
 
-  Widget _sideMenu(BuildContext context) => Container(
+  Widget _sideMenu() => Container(
         color: Colors.blue,
         height: double.infinity,
         width: 240,
@@ -67,9 +67,7 @@ class HomeScreen extends StatelessWidget {
                 height: 50.0,
               ),
               SideMenuButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, AddCompany().id);
-                },
+                onPressed: () {},
                 title: 'Add Company',
               ),
               SideMenuButton(
