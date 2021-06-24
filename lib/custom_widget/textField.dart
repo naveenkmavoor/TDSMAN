@@ -11,9 +11,6 @@ class CustomField extends StatelessWidget {
       required this.width,
       required this.label})
       : super(key: key);
-
-      
-
   @override
   Widget build(BuildContext context) {
     return Row(

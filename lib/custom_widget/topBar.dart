@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 class TopBar extends StatefulWidget {
   TopBar({Key? key}) : super(key: key);
-
   @override
   _TopBarState createState() => _TopBarState();
 }
