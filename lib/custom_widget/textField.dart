@@ -12,8 +12,6 @@ class CustomField extends StatelessWidget {
       required this.label})
       : super(key: key);
 
-      
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -27,23 +25,25 @@ class CustomField extends StatelessWidget {
         SizedBox(
           width: 10,
         ),
-        Container(
-          width: width,
-          height: 27,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(color: Colors.grey),
-            borderRadius: BorderRadius.circular(3),
-          ),
-          child: TextFormField(
-            style: TextStyle(
-              fontSize: 13,
+        Expanded(
+          child: Container(
+            width: width,
+            height: 27,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(3),
             ),
-            decoration: InputDecoration(
-              isDense: true,
-              border: InputBorder.none,
+            child: TextFormField(
+              style: TextStyle(
+                fontSize: 13,
+              ),
+              decoration: InputDecoration(
+                isDense: true,
+                border: InputBorder.none,
+              ),
+              validator: validator,
             ),
-            validator: validator,
           ),
         ),
       ],

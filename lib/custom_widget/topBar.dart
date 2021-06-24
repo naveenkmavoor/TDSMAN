@@ -133,7 +133,6 @@ class _TopBarState extends State<TopBar> {
             return PopupMenuItem<String>(
               value: choice,
               height: 20,
-              padding: EdgeInsets.all(5),
               child: Text(
                 choice,
                 style: TextStyle(

@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:tdsman_windows_app/screens/add_company.dart';
 import 'package:tdsman_windows_app/screens/home_screen.dart';
 
 void main() async {
@@ -18,6 +19,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
+      routes: {
+        HomeScreen().id: (context) => HomeScreen(),
+        AddCompany().id: (context) => AddCompany(),
+      },
     );
   }
 }
