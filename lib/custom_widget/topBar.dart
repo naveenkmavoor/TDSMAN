@@ -26,70 +26,6 @@ class _TopBarState extends State<TopBar> {
     );
   }
 
-  final List buttonInfo = [
-    [
-      'Masters',
-      <String>[],
-    ],
-    [
-      'Regular Return',
-      <String>[
-        'Form 24Q',
-        'Import From Excel',
-        'Import From TDS File(Consolidated Statement)',
-      ],
-    ],
-    [
-      'Correction return',
-      <String>[
-        'Import Data For Correction',
-        'Make Corrections',
-      ],
-    ],
-    [
-      'Reports',
-      <String>[
-        'Certificates',
-      ],
-    ],
-    [
-      'NDSL Information',
-      <String>[
-        'View BIN Information Online',
-      ],
-    ],
-    [
-      'TRACES information',
-      <String>[
-        'PAN Name Extractor',
-        'Request For TDS/Conso File Online',
-        'Request For Form 16A',
-        'Request For Defaults/Justification Report',
-        'Add Challan/ PAN Correction/ Challan Correction',
-        'Download Requested Files',
-        'View Default Summary',
-        'View Statement Status',
-        'View TDS/TCS Credit',
-        'Download PDF Converter Utility To Generate TDS Certificate',
-        'Download PDF Converter Utility To Generate TDS Certificate Part-B',
-        'Download Justification Report Generation Utility',
-      ],
-    ],
-    [
-      'Utilities',
-      <String>[
-        'Rename PDF Files',
-        'File Return Online',
-        'Update File Validation Utility - [ 7.1 ]',
-        'Update Software',
-      ],
-    ],
-    [
-      'Exit',
-      <String>[],
-    ],
-  ];
-
   Widget _dropDownButton(i) {
     return PopupMenuButton<String>(
       offset: Offset.fromDirection(1.5708, 30),
@@ -99,7 +35,11 @@ class _TopBarState extends State<TopBar> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5),
       ),
-      onSelected: (choice) {},
+      onSelected: (choice) {
+        int index = buttonInfo[i][1].indexOf(choice);
+        print(index.toString());
+        buttonInfo[i][2][index]();
+      },
       child: Container(
         padding: EdgeInsets.symmetric(
           horizontal: 10,
@@ -137,3 +77,148 @@ class _TopBarState extends State<TopBar> {
     );
   }
 }
+
+final List buttonInfo = [
+  [
+    'Masters',
+    <String>[],
+  ],
+  [
+    'Regular Return',
+    <String>[
+      'Form 24Q',
+      'Import From Excel',
+      'Import From TDS File(Consolidated Statement)',
+    ],
+    <Function>[
+      () {
+        print('24Q');
+      },
+      () {
+        print('24Q 12');
+      },
+      () {
+        print('24Q 1234');
+      },
+    ]
+  ],
+  [
+    'Correction return',
+    <String>[
+      'Import Data For Correction',
+      'Make Corrections',
+    ],
+    <Function>[
+      () {
+        print('24Q');
+      },
+      () {
+        print('24Q 12');
+      },
+    ]
+  ],
+  [
+    'Reports',
+    <String>[
+      'Form 16 Merge PartA - PartB',
+    ],
+    <Function>[
+      () {
+        print('24Q');
+      },
+    ]
+  ],
+  [
+    'NDSL Information',
+    <String>[
+      'View BIN Information Online',
+    ],
+    <Function>[
+      () {
+        print('24Q');
+      },
+    ]
+  ],
+  [
+    'TRACES information',
+    <String>[
+      'PAN Name Extractor',
+      'Request For TDS/Conso File Online',
+      'Request For Form 16A',
+      'Request For Defaults/Justification Report',
+      'Add Challan/ PAN Correction/ Challan Correction',
+      'Download Requested Files',
+      'View Default Summary',
+      'View Statement Status',
+      'View TDS/TCS Credit',
+      'Download PDF Converter Utility To Generate TDS Certificate',
+      'Download PDF Converter Utility To Generate TDS Certificate Part-B',
+      'Download Justification Report Generation Utility',
+    ],
+    <Function>[
+      () {
+        print('24Q');
+      },
+      () {
+        print('24Q 12');
+      },
+      () {
+        print('24Q 1234');
+      },
+      () {
+        print('24Q');
+      },
+      () {
+        print('24Q 12');
+      },
+      () {
+        print('24Q 1234');
+      },
+      () {
+        print('24Q');
+      },
+      () {
+        print('24Q 12');
+      },
+      () {
+        print('24Q 1234');
+      },
+      () {
+        print('24Q');
+      },
+      () {
+        print('24Q 12');
+      },
+      () {
+        print('24Q 1234');
+      },
+    ]
+  ],
+  [
+    'Utilities',
+    <String>[
+      'Rename PDF Files',
+      'File Return Online',
+      'Update File Validation Utility - [ 7.1 ]',
+      'Update Software',
+    ],
+    <Function>[
+      () {
+        print('24Q');
+      },
+      () {
+        print('24Q 12');
+      },
+      () {
+        print('24Q 1234');
+      },
+      () {
+        print('24Q 1234');
+      },
+    ]
+  ],
+  [
+    'Exit',
+    <String>[],
+  ],
+];
