@@ -27,13 +27,15 @@ class LoginScreen extends StatelessWidget {
             alignment: Alignment.center,
             margin: EdgeInsets.symmetric(horizontal: 400),
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(30.0)),
+              border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
             child: TextField(
               decoration: InputDecoration(
-                  hintText: "User Email",
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 15)),
+                hintText: "User Email",
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(left: 15),
+              ),
             ),
           ),
           SizedBox(height: size.height * 0.03),
@@ -41,13 +43,15 @@ class LoginScreen extends StatelessWidget {
             alignment: Alignment.center,
             margin: EdgeInsets.symmetric(horizontal: 400),
             decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(30.0)),
+              border: Border.all(color: Colors.grey),
+              borderRadius: BorderRadius.circular(30.0),
+            ),
             child: TextField(
               decoration: InputDecoration(
-                  hintText: "Password",
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.only(left: 15)),
+                hintText: "Password",
+                border: InputBorder.none,
+                contentPadding: EdgeInsets.only(left: 15),
+              ),
               obscureText: true,
             ),
           ),
@@ -58,7 +62,8 @@ class LoginScreen extends StatelessWidget {
             child: RaisedButton(
               onPressed: () {},
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(80.0)),
+                borderRadius: BorderRadius.circular(80.0),
+              ),
               textColor: Colors.white,
               padding: const EdgeInsets.all(0),
               child: Container(
@@ -66,11 +71,14 @@ class LoginScreen extends StatelessWidget {
                 height: 50.0,
                 width: size.width * 0.5,
                 decoration: new BoxDecoration(
-                    borderRadius: BorderRadius.circular(80.0),
-                    gradient: new LinearGradient(colors: [
+                  borderRadius: BorderRadius.circular(80.0),
+                  gradient: new LinearGradient(
+                    colors: [
                       Color.fromARGB(255, 255, 136, 34),
                       Color.fromARGB(255, 255, 177, 41)
-                    ])),
+                    ],
+                  ),
+                ),
                 padding: const EdgeInsets.all(0),
                 child: Text(
                   "LOGIN",
@@ -82,7 +90,10 @@ class LoginScreen extends StatelessWidget {
           ),
           Container(
             alignment: Alignment.center,
-            margin: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+            margin: EdgeInsets.symmetric(
+              horizontal: 40,
+              vertical: 10,
+            ),
             child: GestureDetector(
               onTap: () => {
                 // Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen()))
@@ -90,9 +101,10 @@ class LoginScreen extends StatelessWidget {
               child: Text(
                 "Don't Have an Account? Sign up",
                 style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                    color: Color(0xFF2661FA)),
+                  fontSize: 12,
+                  fontWeight: FontWeight.bold,
+                  color: Color(0xFF2661FA),
+                ),
               ),
             ),
           )
