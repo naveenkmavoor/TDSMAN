@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tdsman_windows_app/custom_widget/topBar.dart';
-import 'package:tdsman_windows_app/screens/addEmployee.dart';
-import 'package:tdsman_windows_app/screens/home_screen.dart';
+
+import 'addEmployee.dart';
+import 'home_screen.dart';
 
 class BaseScreen extends StatefulWidget {
   const BaseScreen({Key? key}) : super(key: key);
