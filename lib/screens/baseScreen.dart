@@ -3,6 +3,7 @@ import 'package:tdsman_windows_app/custom_widget/topBar.dart';
 import 'package:tdsman_windows_app/screens/addEmployee.dart';
 import 'package:tdsman_windows_app/screens/home_screen.dart';
 import 'package:tdsman_windows_app/screens/login_screen.dart';
+import 'package:tdsman_windows_app/screens/login_screen_updated.dart';
 
 class BaseScreen extends StatefulWidget {
   const BaseScreen({Key? key}) : super(key: key);
@@ -12,7 +13,7 @@ class BaseScreen extends StatefulWidget {
 }
 
 List _screens = [
-  LoginScreen(),
+  LoginScreenUpdated(),
   HomeScreen(),
   AddEmployee(),
 ];
