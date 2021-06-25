@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tdsman_windows_app/custom_widget/topBar.dart';
+import 'package:tdsman_windows_app/screens/24QBasicInfo.dart';
 
 import 'addEmployee.dart';
 import 'home_screen.dart';
@@ -12,7 +13,9 @@ class BaseScreen extends StatefulWidget {
 }
 
 List _screens = [
+
   HomeScreen(),
+
   AddEmployee(),
 ];
 
@@ -31,7 +34,7 @@ class _BaseScreenState extends State<BaseScreen> {
         ),
       ),
       body: Container(
-        child: _screens[i],
+        child: BasicInfo24Q(),
       ),
     );
   }

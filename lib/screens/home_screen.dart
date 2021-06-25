@@ -1,11 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:tdsman_windows_app/custom_widget/customButton.dart';
-import 'package:tdsman_windows_app/custom_widget/customDropDown.dart';
-import 'package:tdsman_windows_app/custom_widget/customText.dart';
 import 'package:tdsman_windows_app/custom_widget/formattedText.dart';
 import 'package:tdsman_windows_app/custom_widget/side_menu_button.dart';
-import 'package:tdsman_windows_app/custom_widget/textField.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
@@ -23,47 +19,47 @@ class HomeScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               _header,
-              // _displayInfo(),
-              CDropDown(
-                menuList: [
-                  'ASASDA',
-                  'asdfawfe',
-                  'asfewv er',
-                  'fqwerqw',
-                  'dfwef',
-                  'ajsdbca dcasjdcbasdc asdchasdc asdhcjashdc asdchsdchw cwuhcsad ckuahcwiec as,bdc',
-                ],
-                widthFactor: .3,
-              ),
-              Row(
-                children: [
-                  CustomText(
-                    text: 'Field 1 : ',
-                    color: Colors.black,
-                    bold: true,
-                  ),
-                  Flexible(
-                    flex: 1,
-                    child: CustomField(
-                      validator: (validator) {},
-                      onSaved: (saved) {},
-                    ),
-                  ),
-                  Flexible(
-                    flex: 2,
-                    child: CustomField(
-                      validator: (validator) {},
-                      onSaved: (saved) {},
-                    ),
-                  ),
-                  CustomButton(
-                    onPressed: () {},
-                    buttonName: 'Button',
-                    verticalPad: 10,
-                    horizontalPad: 20,
-                  ),
-                ],
-              ),
+              _displayInfo(),
+              // CDropDown(
+              //   menuList: [
+              //     'ASASDA',
+              //     'asdfawfe',
+              //     'asfewv er',
+              //     'fqwerqw',
+              //     'dfwef',
+              //     'ajsdbca dcasjdcbasdc asdchasdc asdhcjashdc asdchsdchw cwuhcsad ckuahcwiec as,bdc',
+              //   ],
+              //   widthFactor: .3,
+              // ),
+              // Row(
+              //   children: [
+              //     CustomText(
+              //       text: 'Field 1 : ',
+              //       color: Colors.black,
+              //       bold: true,
+              //     ),
+              //     Flexible(
+              //       flex: 1,
+              //       child: CustomField(
+              //         validator: (validator) {},
+              //         onSaved: (saved) {},
+              //       ),
+              //     ),
+              //     Flexible(
+              //       flex: 2,
+              //       child: CustomField(
+              //         validator: (validator) {},
+              //         onSaved: (saved) {},
+              //       ),
+              //     ),
+              //     CustomButton(
+              //       onPressed: () {},
+              //       buttonName: 'Button',
+              //       verticalPad: 10,
+              //       horizontalPad: 20,
+              //     ),
+              //   ],
+              // ),
             ],
           ),
         ),
