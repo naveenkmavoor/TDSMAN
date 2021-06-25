@@ -18,50 +18,225 @@ class AddCompany extends StatelessWidget {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        padding: EdgeInsets.all(50.0),
+        padding: EdgeInsets.all(20.0),
         child: Column(
           children: [
             Container(
               padding: EdgeInsets.all(10.0),
               margin: EdgeInsets.all(5.0),
               decoration: KBorderContainer,
-              child: CustomField(
-                label: 'Company Name',
-                width: 0.0,
-                validator: null,
+              child: Row(
+                children: [
+                  Expanded(
+                    child: CustomField(
+                      label: 'Company Name',
+                      width: MediaQuery.of(context).size.width * 0.6,
+                      validator: null,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text("Hello"),
+                  ),
+                ],
               ),
             ),
             Expanded(
               child: Row(
                 children: [
                   Expanded(
+                    flex: 3,
                     child: Column(
                       children: [
                         Container(
                           padding: EdgeInsets.all(10.0),
                           margin: EdgeInsets.all(5.0),
                           decoration: KBorderContainer,
-                          child: CustomField(
-                            label: 'Company Name',
-                            width: 0.0,
-                            validator: null,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "data",
+                                textAlign: TextAlign.left,
+                              ),
+                              Row(
+                                children: [
+                                  CustomField(
+                                    label: 'Company Name',
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.1,
+                                    validator: null,
+                                  ),
+                                  CustomField(
+                                    label: 'Company Name',
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.1,
+                                    validator: null,
+                                  ),
+                                  CustomField(
+                                    label: 'Company Name',
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.1,
+                                    validator: null,
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  CustomField(
+                                    label: 'Company Name',
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.1,
+                                    validator: null,
+                                  ),
+                                  CustomField(
+                                    label: 'Company Name',
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.1,
+                                    validator: null,
+                                  ),
+                                  CustomField(
+                                    label: 'Company Name',
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.1,
+                                    validator: null,
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
                         ),
                         Expanded(
                           child: Row(
                             children: [
                               Expanded(
+                                flex: 2,
                                 child: Column(
                                   children: [
                                     Expanded(
+                                      flex: 2,
                                       child: Container(
                                         padding: EdgeInsets.all(10.0),
                                         margin: EdgeInsets.all(5.0),
                                         decoration: KBorderContainer,
-                                        child: CustomField(
-                                          label: 'Company Name',
-                                          width: 0.0,
-                                          validator: null,
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text("Data"),
+                                            CustomField(
+                                              label: 'Company Name',
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.1,
+                                              validator: null,
+                                            ),
+                                            CustomField(
+                                              label: 'Company Name',
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.1,
+                                              validator: null,
+                                            ),
+                                            CustomField(
+                                              label: 'Company Name',
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.1,
+                                              validator: null,
+                                            ),
+                                            CustomField(
+                                              label: 'Company Name',
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.1,
+                                              validator: null,
+                                            ),
+                                            CustomField(
+                                              label: 'Company Name',
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.1,
+                                              validator: null,
+                                            ),
+                                            CustomField(
+                                              label: 'Company Name',
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.1,
+                                              validator: null,
+                                            ),
+                                            CustomField(
+                                              label: 'Company Name',
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.1,
+                                              validator: null,
+                                            ),
+                                            Row(
+                                              children: [
+                                                CustomField(
+                                                  label: 'Company Name',
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.1,
+                                                  validator: null,
+                                                ),
+                                                CustomField(
+                                                  label: 'Company Name',
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.1,
+                                                  validator: null,
+                                                ),
+                                              ],
+                                            ),
+                                            Row(
+                                              children: [
+                                                CustomField(
+                                                  label: 'Company Name',
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.1,
+                                                  validator: null,
+                                                ),
+                                                CustomField(
+                                                  label: 'Company Name',
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width *
+                                                      0.1,
+                                                  validator: null,
+                                                ),
+                                              ],
+                                            ),
+                                            CustomField(
+                                              label: 'Company Name',
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.1,
+                                              validator: null,
+                                            ),
+                                            CustomField(
+                                              label: 'Company Name',
+                                              width: MediaQuery.of(context)
+                                                      .size
+                                                      .width *
+                                                  0.1,
+                                              validator: null,
+                                            ),
+                                          ],
                                         ),
                                       ),
                                     ),
