@@ -19,31 +19,29 @@ class CustomField extends StatelessWidget {
         Text(
           label,
           style: TextStyle(
-            fontWeight: FontWeight.bold,
-          ),
+              fontWeight: FontWeight.bold,
+              fontSize: MediaQuery.of(context).size.aspectRatio * 10),
         ),
         SizedBox(
           width: 10,
         ),
-        Expanded(
-          child: Container(
-            width: width,
-            height: 27,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.grey),
-              borderRadius: BorderRadius.circular(3),
+        Container(
+          width: width,
+          height: 27,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(color: Colors.grey),
+            borderRadius: BorderRadius.circular(3),
+          ),
+          child: TextFormField(
+            style: TextStyle(
+              fontSize: 13,
             ),
-            child: TextFormField(
-              style: TextStyle(
-                fontSize: 13,
-              ),
-              decoration: InputDecoration(
-                isDense: true,
-                border: InputBorder.none,
-              ),
-              validator: validator,
+            decoration: InputDecoration(
+              isDense: true,
+              border: InputBorder.none,
             ),
+            validator: validator,
           ),
         ),
       ],
