@@ -1,13 +1,13 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import '../extensions/enum_extension.dart';
+import '../../extensions/enum_extension.dart';
 
 enum EmployeeCategory {
   General,
 }
 
-class Employee {
+class EmployeeA {
   final String employeePan;
   final String employeeName;
   final EmployeeCategory category;
@@ -15,7 +15,7 @@ class Employee {
   final String designation;
   final String email;
 
-  Employee({
+  EmployeeA({
     required this.employeePan,
     required this.employeeName,
     required this.category,
@@ -24,7 +24,7 @@ class Employee {
     required this.email,
   });
 
-  Employee copyWith({
+  EmployeeA copyWith({
     String? employeePan,
     String? employeeName,
     EmployeeCategory? category,
@@ -32,7 +32,7 @@ class Employee {
     String? designation,
     String? email,
   }) {
-    return Employee(
+    return EmployeeA(
       employeePan: employeePan ?? this.employeePan,
       employeeName: employeeName ?? this.employeeName,
       category: category ?? this.category,
@@ -53,8 +53,8 @@ class Employee {
     };
   }
 
-  factory Employee.fromMap(Map<String, dynamic> map) {
-    return Employee(
+  factory EmployeeA.fromMap(Map<String, dynamic> map) {
+    return EmployeeA(
       employeePan: map['employeePan'],
       employeeName: map['employeeName'],
       category: map['category']
@@ -68,19 +68,19 @@ class Employee {
 
   String toJson() => json.encode(toMap());
 
-  factory Employee.fromJson(String source) =>
-      Employee.fromMap(json.decode(source));
+  factory EmployeeA.fromJson(String source) =>
+      EmployeeA.fromMap(json.decode(source));
 
   @override
   String toString() {
-    return 'Employee(employeePan: $employeePan, employeeName: $employeeName, category: $category, employeeRefNum: $employeeRefNum, designation: $designation, email: $email)';
+    return 'EmployeeA(employeePan: $employeePan, employeeName: $employeeName, category: $category, employeeRefNum: $employeeRefNum, designation: $designation, email: $email)';
   }
 
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is Employee &&
+    return other is EmployeeA &&
         other.employeePan == employeePan &&
         other.employeeRefNum == employeeRefNum;
   }
