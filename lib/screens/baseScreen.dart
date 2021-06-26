@@ -35,7 +35,7 @@ class _BaseScreenState extends State<BaseScreen> {
         ),
       ),
       body: Container(
-        child: BasicInfo24Q(),
+        child: HomeScreen(),
       ),
     );
   }

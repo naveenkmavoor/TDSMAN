@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tdsman_windows_app/custom_widget/formattedText.dart';
 import 'package:tdsman_windows_app/custom_widget/side_menu_button.dart';
+import 'package:tdsman_windows_app/screens/24QBasicInfo.dart';
 
 // ignore: must_be_immutable
 class HomeScreen extends StatelessWidget {
@@ -13,53 +14,13 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        _sideMenu(),
+        _sideMenu(context),
         Expanded(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               _header,
               _displayInfo(),
-              // CDropDown(
-              //   menuList: [
-              //     'ASASDA',
-              //     'asdfawfe',
-              //     'asfewv er',
-              //     'fqwerqw',
-              //     'dfwef',
-              //     'ajsdbca dcasjdcbasdc asdchasdc asdhcjashdc asdchsdchw cwuhcsad ckuahcwiec as,bdc',
-              //   ],
-              //   widthFactor: .3,
-              // ),
-              // Row(
-              //   children: [
-              //     CustomText(
-              //       text: 'Field 1 : ',
-              //       color: Colors.black,
-              //       bold: true,
-              //     ),
-              //     Flexible(
-              //       flex: 1,
-              //       child: CustomField(
-              //         validator: (validator) {},
-              //         onSaved: (saved) {},
-              //       ),
-              //     ),
-              //     Flexible(
-              //       flex: 2,
-              //       child: CustomField(
-              //         validator: (validator) {},
-              //         onSaved: (saved) {},
-              //       ),
-              //     ),
-              //     CustomButton(
-              //       onPressed: () {},
-              //       buttonName: 'Button',
-              //       verticalPad: 10,
-              //       horizontalPad: 20,
-              //     ),
-              //   ],
-              // ),
             ],
           ),
         ),
@@ -181,7 +142,7 @@ class HomeScreen extends StatelessWidget {
         ],
       );
 
-  Widget _sideMenu() => Container(
+  Widget _sideMenu(BuildContext context) => Container(
         color: Colors.blue[700],
         height: double.infinity,
         width: 260,
@@ -216,11 +177,23 @@ class HomeScreen extends StatelessWidget {
                 height: 50.0,
               ),
               SideMenuButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return Text("LALLALAL");
+                    },
+                  ));
+                },
                 title: 'Add Company',
               ),
               SideMenuButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(
+                    builder: (BuildContext context) {
+                      return BasicInfo24Q();
+                    },
+                  ));
+                },
                 title: 'Form 24Q',
               ),
               SideMenuButton(
