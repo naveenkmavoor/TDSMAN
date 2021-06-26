@@ -20,13 +20,51 @@ class BasicInfo24Q extends StatelessWidget {
           header2(),
           Expanded(
             child: SingleChildScrollView(
-              child: Column(
+              child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  body1(context),
-                  body2(context),
-                  body3(context),
-                  body4(context),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      body1(context),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      body2(context),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      body3(context),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      body4(context),
+                      SizedBox(
+                        height: 10,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(
+                        color: Colors.black45,
+                      ),
+                      color: Colors.blue[50],
+                    ),
+                    width: MediaQuery.of(context).size.width * 0.45,
+                    height: MediaQuery.of(context).size.width * 0.35,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Some Info Goes here"),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -82,287 +120,356 @@ class BasicInfo24Q extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            CustomText(
-              text: "Select Financial Year",
-              color: Colors.black,
-              bold: true,
-            ),
-            CDropDown(
-              menuList: [
-                '2015-2016',
-                '2016-2017',
-                '2017-2018',
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomText(
+                  text: "Select Financial Year",
+                  color: Colors.black,
+                  bold: true,
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                CDropDown(
+                  menuList: [
+                    '2015-2016',
+                    '2016-2017',
+                    '2017-2018',
+                  ],
+                  widthFactor: 0.15,
+                ),
               ],
-              widthFactor: 0.15,
             ),
-            CustomText(
-              text: "Select Quarter",
-              color: Colors.black,
-              bold: true,
-            ),
-            CDropDown(
-              menuList: [
-                'Q1',
-                'Q2',
-                'Q3',
-                'Q4',
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomText(
+                  text: "Select Quarter",
+                  color: Colors.black,
+                  bold: true,
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                CDropDown(
+                  menuList: [
+                    'Q1',
+                    'Q2',
+                    'Q3',
+                    'Q4',
+                  ],
+                  widthFactor: 0.1,
+                ),
               ],
-              widthFactor: 0.1,
             ),
-            CustomText(
-              text: "Select Company",
-              color: Colors.black,
-              bold: true,
-            ),
-            CDropDown(
-              menuList: [
-                'Sec Govt High School1',
-                'Sec Govt High School2',
-                'Sec Govt High School3',
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CustomText(
+                  text: "Select Company",
+                  color: Colors.black,
+                  bold: true,
+                ),
+                SizedBox(
+                  width: 20,
+                ),
+                CDropDown(
+                  menuList: [
+                    'Sec Govt High School1',
+                    'Sec Govt High School2',
+                    'Sec Govt High School3',
+                  ],
+                  widthFactor: 0.3,
+                ),
               ],
-              widthFactor: 0.3,
             ),
           ],
         ),
       );
-  Widget body1(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          label("Company Info"),
-          Row(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  label("TAN"),
-                  label("PAN"),
-                  label("Deductor Type"),
-                  label("Company Name"),
-                  label("Responsible Person"),
-                  label("Responsible Person PAN"),
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  labelField(
-                    context,
-                    0.1,
-                    (val) {},
-                    (val) {},
-                  ),
-                  Row(
-                    children: [
-                      labelField(
-                        context,
-                        0.1,
-                        (val) {},
-                        (val) {},
-                      ),
-                      label("GSTN"),
-                      labelField(
-                        context,
-                        0.1,
-                        (val) {},
-                        (val) {},
-                      ),
-                    ],
-                  ),
-                  labelField(
-                    context,
-                    0.3,
-                    (val) {},
-                    (val) {},
-                  ),
-                  labelField(
-                    context,
-                    0.3,
-                    (val) {},
-                    (val) {},
-                  ),
-                  labelField(
-                    context,
-                    0.3,
-                    (val) {},
-                    (val) {},
-                  ),
-                  labelField(
-                    context,
-                    0.1,
-                    (val) {},
-                    (val) {},
-                  ),
-                ],
-              ),
-            ],
+  Widget body1(BuildContext context) => Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          border: Border.all(
+            color: Colors.black45,
           ),
-        ],
+        ),
+        width: MediaQuery.of(context).size.width * 0.5,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            label("Company Info"),
+            Row(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    label("TAN"),
+                    label("PAN"),
+                    label("Deductor Type"),
+                    label("Company Name"),
+                    label("Responsible Person"),
+                    label("Responsible Person PAN"),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    labelField(
+                      context,
+                      0.1,
+                      (val) {},
+                      (val) {},
+                    ),
+                    Row(
+                      children: [
+                        labelField(
+                          context,
+                          0.1,
+                          (val) {},
+                          (val) {},
+                        ),
+                        label("GSTN"),
+                        labelField(
+                          context,
+                          0.1,
+                          (val) {},
+                          (val) {},
+                        ),
+                      ],
+                    ),
+                    labelField(
+                      context,
+                      0.3,
+                      (val) {},
+                      (val) {},
+                    ),
+                    labelField(
+                      context,
+                      0.3,
+                      (val) {},
+                      (val) {},
+                    ),
+                    labelField(
+                      context,
+                      0.3,
+                      (val) {},
+                      (val) {},
+                    ),
+                    labelField(
+                      context,
+                      0.1,
+                      (val) {},
+                      (val) {},
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       );
 
   Widget body2(BuildContext context) => Row(
         children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              label("Last Token Number"),
-              Row(
-                children: [
-                  label("Has regular return filed for Form 24Q earlier"),
-                  CDropDown(
-                    menuList: ['Yes', 'No'],
-                    widthFactor: 0.05,
-                  ),
-                ],
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              border: Border.all(
+                color: Colors.black45,
               ),
-              Row(
-                children: [
-                  label("Token No. of previous regular return (24Q)"),
-                  labelField(
-                    context,
-                    0.1,
-                    (val) {},
-                    (val) {},
-                  ),
-                ],
-              ),
-            ],
+            ),
+            width: MediaQuery.of(context).size.width * 0.3,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                label("Last Token Number"),
+                Row(
+                  children: [
+                    label("Has regular return filed for Form 24Q earlier"),
+                    CDropDown(
+                      menuList: ['Yes', 'No'],
+                      widthFactor: 0.05,
+                    ),
+                  ],
+                ),
+                Row(
+                  children: [
+                    label("Token No. of previous regular return (24Q)"),
+                    labelField(
+                      context,
+                      0.1,
+                      (val) {},
+                      (val) {},
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              label("Address Change since last return"),
-              Row(
-                children: [
-                  Checkbox(
-                    value: false,
-                    onChanged: (val) {},
-                  ),
-                  label('Company'),
-                ],
+          SizedBox(
+            width: 10,
+          ),
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(5),
+              border: Border.all(
+                color: Colors.black45,
               ),
-              Row(
-                children: [
-                  Checkbox(
-                    value: false,
-                    onChanged: (val) {},
-                  ),
-                  label('Responsible Person'),
-                ],
-              ),
-            ],
+            ),
+            width: MediaQuery.of(context).size.width * 0.2,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                label("Address Change since last return"),
+                Row(
+                  children: [
+                    Checkbox(
+                      value: false,
+                      onChanged: (val) {},
+                    ),
+                    label('Company'),
+                  ],
+                ),
+                Row(
+                  children: [
+                    Checkbox(
+                      value: false,
+                      onChanged: (val) {},
+                    ),
+                    label('Responsible Person'),
+                  ],
+                ),
+              ],
+            ),
           ),
         ],
       );
 
-  Widget body3(BuildContext context) => Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          label("Control Summary"),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  label("Challan Records"),
-                  label("Amount Paid"),
-                  label("Challan Amount"),
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      labelField(
-                        context,
-                        0.06,
-                        (val) {},
-                        (val) {},
-                      ),
-                      CustomButton(
-                        buttonName: 'Verify',
-                        onPressed: () {},
-                        verticalPad: 10,
-                        horizontalPad: 10,
-                      ),
-                    ],
-                  ),
-                  labelField(
-                    context,
-                    0.1,
-                    (val) {},
-                    (val) {},
-                  ),
-                  labelField(
-                    context,
-                    0.1,
-                    (val) {},
-                    (val) {},
-                  ),
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  label("Deductee Records"),
-                  label("Total TDS Deducted"),
-                  label("Net Taxable Income"),
-                ],
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Row(
-                    children: [
-                      labelField(
-                        context,
-                        0.1,
-                        (val) {},
-                        (val) {},
-                      ),
-                      CustomButton(
-                        buttonName: 'Predict Defaults',
-                        onPressed: () {},
-                        verticalPad: 10,
-                        horizontalPad: 20,
-                      ),
-                    ],
-                  ),
-                  Row(
-                    children: [
-                      labelField(
-                        context,
-                        0.1,
-                        (val) {},
-                        (val) {},
-                      ),
-                      CustomButton(
-                        buttonName: 'Verify All PAN',
-                        onPressed: () {},
-                        verticalPad: 10,
-                        horizontalPad: 20,
-                      ),
-                    ],
-                  ),
-                  labelField(
-                    context,
-                    0.1,
-                    (val) {},
-                    (val) {},
-                  ),
-                ],
-              ),
-            ],
+  Widget body3(BuildContext context) => Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          border: Border.all(
+            color: Colors.black45,
           ),
-        ],
+        ),
+        width: MediaQuery.of(context).size.width * 0.5,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            label("Control Summary"),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    label("Challan Records"),
+                    label("Amount Paid"),
+                    label("Challan Amount"),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        labelField(
+                          context,
+                          0.06,
+                          (val) {},
+                          (val) {},
+                        ),
+                        CustomButton(
+                          buttonName: 'Verify',
+                          onPressed: () {},
+                          verticalPad: 10,
+                          horizontalPad: 10,
+                        ),
+                      ],
+                    ),
+                    labelField(
+                      context,
+                      0.1,
+                      (val) {},
+                      (val) {},
+                    ),
+                    labelField(
+                      context,
+                      0.1,
+                      (val) {},
+                      (val) {},
+                    ),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    label("Deductee Records"),
+                    label("Total TDS Deducted"),
+                    label("Net Taxable Income"),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        labelField(
+                          context,
+                          0.1,
+                          (val) {},
+                          (val) {},
+                        ),
+                        CustomButton(
+                          buttonName: 'Predict Defaults',
+                          onPressed: () {},
+                          verticalPad: 10,
+                          horizontalPad: 20,
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        labelField(
+                          context,
+                          0.1,
+                          (val) {},
+                          (val) {},
+                        ),
+                        CustomButton(
+                          buttonName: 'Verify All PAN',
+                          onPressed: () {},
+                          verticalPad: 10,
+                          horizontalPad: 20,
+                        ),
+                      ],
+                    ),
+                    labelField(
+                      context,
+                      0.1,
+                      (val) {},
+                      (val) {},
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       );
 
   Widget body4(BuildContext context) => Container(
         height: MediaQuery.of(context).size.height * 0.15,
-        width: MediaQuery.of(context).size.width * 0.6,
+        width: MediaQuery.of(context).size.width * 0.5,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          border: Border.all(
+            color: Colors.black45,
+          ),
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
