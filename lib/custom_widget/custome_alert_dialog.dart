@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tdsman_windows_app/custom_widget/customText.dart';
 
-import 'customTable.dart';
-
 class CustomeAlertDialog extends StatefulWidget {
   const CustomeAlertDialog({Key? key}) : super(key: key);
 
