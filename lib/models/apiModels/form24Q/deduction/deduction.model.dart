@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:tdsman_windows_app/models/form24Q/challan/challan.model.dart';
-import 'package:tdsman_windows_app/models/form24Q/deductee/deductee.model.dart';
+import 'package:tdsman_windows_app/models/apiModels/form24Q/challan/challan.model.dart';
+import 'package:tdsman_windows_app/models/apiModels/form24Q/deductee/deductee.model.dart';
 
 import '../money.model.dart';
 

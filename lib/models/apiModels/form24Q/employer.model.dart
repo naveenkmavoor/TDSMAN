@@ -1,8 +1,7 @@
 import 'dart:convert';
-
-import 'package:tdsman_windows_app/models/form24Q/address.model.dart';
-import 'package:tdsman_windows_app/models/form24Q/contact.model.dart';
-import 'package:tdsman_windows_app/models/form24Q/employee.model.dart';
+import 'address.model.dart';
+import 'contact.model.dart';
+import 'employee.model.dart';
 
 // ignore_for_file: non_constant_identifier_names
 class Employer {

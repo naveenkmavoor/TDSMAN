@@ -1,7 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/foundation.dart';
-
 import 'address.model.dart';
 import 'contact.model.dart';
 
@@ -90,26 +88,11 @@ class Employee {
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
 
-    return other is Employee &&
-        other.id == id &&
-        other.name == name &&
-        other.pan == pan &&
-        other.pan_holder_type == pan_holder_type &&
-        other.address == address &&
-        other.contact == contact &&
-        listEquals(other.documents, documents) &&
-        other.designation == designation;
+    return other is Employee && other.id == id;
   }
 
   @override
   int get hashCode {
-    return id.hashCode ^
-        name.hashCode ^
-        pan.hashCode ^
-        pan_holder_type.hashCode ^
-        address.hashCode ^
-        contact.hashCode ^
-        documents.hashCode ^
-        designation.hashCode;
+    return id.hashCode;
   }
 }
