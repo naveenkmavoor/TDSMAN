@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tdsman_windows_app/custom_widget/custome_alert_dialog.dart';
 import 'package:tdsman_windows_app/custom_widget/side_menu_button.dart';
-import 'package:tdsman_windows_app/custom_widget/textField.dart';
 import 'package:tdsman_windows_app/custom_widget/topBar.dart';
 import 'package:tdsman_windows_app/screens/add_company.dart';
 
@@ -76,11 +75,9 @@ class HomeScreen extends StatelessWidget {
               ),
               SideMenuButton(
                 onPressed: () {
-                  showDialog(
-                      context: context,
-                      builder: (context) {
-                        return CustomeAlertDialog();
-                      });
+                showDialog(context: context, builder: (context){
+                  return CustomeAlertDialog();
+                });
                 },
                 title: 'Form 24Q',
               ),
