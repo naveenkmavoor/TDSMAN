@@ -11,7 +11,9 @@ class BasicInfo24Q extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        
+        title: header1(context),
+        elevation: 0,
+        backgroundColor: Colors.transparent
       ),
       body: Container(
         padding: EdgeInsets.all(10),
@@ -20,7 +22,6 @@ class BasicInfo24Q extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            header1(context),
             header2(),
             Expanded(
               child: SingleChildScrollView(
