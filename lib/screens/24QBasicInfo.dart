@@ -9,68 +9,73 @@ class BasicInfo24Q extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(10),
-      width: double.infinity,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          header1(context),
-          header2(),
-          Expanded(
-            child: SingleChildScrollView(
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      body1(context),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      body2(context),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      body3(context),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      body4(context),
-                      SizedBox(
-                        height: 10,
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(
-                        color: Colors.black45,
-                      ),
-                      color: Colors.blue[50],
-                    ),
-                    width: MediaQuery.of(context).size.width * 0.45,
-                    height: MediaQuery.of(context).size.width * 0.35,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+    return Scaffold(
+      appBar: AppBar(
+        
+      ),
+      body: Container(
+        padding: EdgeInsets.all(10),
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            header1(context),
+            header2(),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Some Info Goes here"),
+                        body1(context),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        body2(context),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        body3(context),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        body4(context),
+                        SizedBox(
+                          height: 10,
+                        ),
                       ],
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        border: Border.all(
+                          color: Colors.black45,
+                        ),
+                        color: Colors.blue[50],
+                      ),
+                      width: MediaQuery.of(context).size.width * 0.45,
+                      height: MediaQuery.of(context).size.width * 0.35,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("Some Info Goes here"),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          footer(),
-        ],
+            footer(),
+          ],
+        ),
       ),
     );
   }
