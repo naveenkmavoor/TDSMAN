@@ -74,7 +74,8 @@ class HomeScreen extends StatelessWidget {
                 title: 'Add Company',
               ),
               SideMenuButton(
-                onPressed: () {},
+                onPressed: () {Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Form24Q()));},
                 title: 'Form 24Q',
               ),
               SideMenuButton(
