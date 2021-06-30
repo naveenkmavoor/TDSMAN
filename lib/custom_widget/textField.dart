@@ -1,50 +1,46 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'; 
 
 class CustomField extends StatelessWidget {
-  final validator;
-  final double width;
-  final String label;
-
-  const CustomField(
-      {Key? key,
-      required this.validator,
-      required this.width,
-      required this.label})
-      : super(key: key);
+  final validator, onSaved,align ,controller,maxlength,onChanged,initval;
+   
+    CustomField({
+    Key? key, 
+    this.align,
+    this.controller,
+    this.initval,
+    this.maxlength,
+    this.onChanged,
+    required this.validator,
+    required this.onSaved, 
+  }) : super(key: key,);
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          label,
-          style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: MediaQuery.of(context).size.aspectRatio * 10),
+    return Container(
+      // width: width,
+      height: 27,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(color: Colors.grey),
+        borderRadius: BorderRadius.circular(3),
+      ),
+      child: TextFormField( textAlign: align, maxLength: maxlength,initialValue: initval,
+        style: TextStyle(
+          fontSize: 13,
+        ), 
+      // inputFormatters: <TextInputFormatter>[ 
+      //    FilteringTextInputFormatter.allow(RegExp(r"[\d.]")),   //insert only decimals numbers
+      //           ], 
+        decoration: InputDecoration( counterText: '', 
+          isDense: true,
+          border: InputBorder.none,
         ),
-        SizedBox(
-          width: 10,
-        ),
-        Container(
-          width: width,
-          height: 27,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border.all(color: Colors.grey),
-            borderRadius: BorderRadius.circular(3),
-          ),
-          child: TextFormField(
-            style: TextStyle(
-              fontSize: 13,
-            ),
-            decoration: InputDecoration(
-              isDense: true,
-              border: InputBorder.none,
-            ),
-            validator: validator,
-          ),
-        ),
-      ],
+        validator: validator,
+        onSaved: onSaved,
+        onChanged: onChanged,
+        controller: controller,
+        
+      ),
     );
   }
 }
